@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>俞小栋 - 职场精英介绍</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#165DFF',
+            secondary: '#0D2B93',
+            accent: '#36BFFA',
+            dark: '#1D2939',
+            light: '#F9FAFB'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+      .text-shadow {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      .card-hover {
+        transition: all 0.3s ease;
+      }
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+    }
+  </style>
+</head>
+<body class="bg-light text-dark">
+  <!-- 导航栏 -->
+  <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-md shadow-sm">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <span class="text-primary font-bold text-xl">俞小栋</span>
+        </div>
+        <div class="hidden md:block">
+          <div class="flex items-center space-x-4">
+            <a href="#about" class="text-dark hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">关于</a>
+            <a href="#career" class="text-dark hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">职业历程</a>
+            <a href="#achievements" class="text-dark hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">主要成就</a>
+            <a href="#philosophy" class="text-dark hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">商业理念</a>
+            <a href="#future" class="text-dark hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">未来展望</a>
+          </div>
+        </div>
+        <div class="md:hidden">
+          <button id="menu-toggle" class="text-dark hover:text-primary focus:outline-none">
+            <i class="fa fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- 移动端菜单 -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-dark hover:text-primary hover:bg-gray-50">关于</a>
+        <a href="#career" class="block px-3 py-2 rounded-md text-base font-medium text-dark hover:text-primary hover:bg-gray-50">职业历程</a>
+        <a href="#achievements" class="block px-3 py-2 rounded-md text-base font-medium text-dark hover:text-primary hover:bg-gray-50">主要成就</a>
+        <a href="#philosophy" class="block px-3 py-2 rounded-md text-base font-medium text-dark hover:text-primary hover:bg-gray-50">商业理念</a>
+        <a href="#future" class="block px-3 py-2 rounded-md text-base font-medium text-dark hover:text-primary hover:bg-gray-50">未来展望</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 英雄区 -->
+  <header class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-primary/10 to-accent/10">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="w-full md:w-1/2 mb-8 md:mb-0">
+          <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-dark leading-tight text-shadow">
+            俞小栋
+            <span class="block text-primary mt-2">从会展先锋到互联网上市领航者</span>
+          </h1>
+          <p class="mt-6 text-lg text-gray-600 max-w-xl">
+            凭借卓越的商业洞察力和战略领导力，在会展与互联网两大领域缔造传奇，引领企业实现跨越式发展的商业领袖。
+          </p>
+          <div class="mt-8 flex space-x-4">
+            <a href="#career" class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg font-medium transition-all shadow-lg hover:shadow-primary/30">
+              了解职业历程
+            </a>
+            <a href="#achievements" class="bg-white hover:bg-gray-50 text-primary border border-primary px-6 py-3 rounded-lg font-medium transition-all">
+              查看主要成就
+            </a>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 flex justify-center md:justify-end">
+          <div class="relative">
+            <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-primary to-accent overflow-hidden shadow-2xl">
+              <img src="https://picsum.photos/id/1005/400/400" alt="俞小栋照片" class="w-full h-full object-cover mix-blend-overlay">
+            </div>
+            <div class="absolute -bottom-4 -right-4 bg-white p-4 rounded-lg shadow-lg">
+              <div class="flex items-center">
+                <div class="text-primary mr-2">
+                  <i class="fa fa-line-chart text-2xl"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-gray-500">财富增长</div>
+                  <div class="text-lg font-bold">2000%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 关于部分 -->
+  <section id="about" class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark">个人简介</h2>
+        <div class="w-20 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
+      </div>
+      <div class="max-w-3xl mx-auto">
+        <p class="text-lg text-gray-700 leading-relaxed">
+          俞小栋是一位极具创新精神和战略眼光的商业领袖，拥有丰富的跨行业管理经验。他以敏锐的市场洞察力和卓越的执行力，在会展与互联网两大领域均取得了令人瞩目的成就。
+        </p>
+        <p class="text-lg text-gray-700 leading-relaxed mt-4">
+          作为连续创业者和企业高管，俞小栋深谙行业发展规律，善于把握市场机遇，通过精准的战略布局和高效的团队管理，带领企业实现跨越式发展。他的商业理念和管理方法，为行业发展提供了宝贵的借鉴。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 职业历程部分 -->
+  <section id="career" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark">职业征程</h2>
+        <div class="w-20 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <div class="relative">
+        <!-- 时间线 -->
+        <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary/30 transform md:-translate-x-1/2"></div>
+
+        <!-- 会展行业深耕 -->
+        <div class="relative z-10 mb-12">
+          <div class="flex flex-col md:flex-row items-center">
+            <div class="w-full md:w-1/2 md:pr-12 md:text-right mb-8 md:mb-0">
+              <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                <h3 class="text-xl font-bold text-primary">会展行业深耕：奠定商业基石</h3>
+                <p class="text-sm text-gray-500 mt-1">2015-2017</p>
+                <p class="mt-4 text-gray-700">
+                  2015年加盟上海毕驰展览有限公司，担任高管职务。在任期间，主导搭建公司海外会展业务体系，带领团队拓展国际市场，打造多个具有国际影响力的展会IP。
+                </p>
+                <ul class="mt-4 space-y-2 text-gray-700">
+                  <li class="flex items-start">
+                    <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+                    <span>搭建海外会展业务体系，推动公司国际化战略</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+                    <span>主导“海天盛筵派对”系列海外展，吸引50+国家品牌参与</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+                    <span>促成近百亿元商业合作，提升中国会展业国际话语权</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="hidden md:block absolute left-1/2 top-0 w-8 h-8 bg-primary rounded-full transform -translate-x-1/2"></div>
+            <div class="w-full md:w-1/2 md:pl-12 hidden md:block">
+              <div class="relative h-full flex items-center justify-start">
+                <div class="bg-primary/10 p-4 rounded-lg">
+                  <div class="text-sm text-gray-600">关键成果</div>
+                  <div class="text-2xl font-bold text-primary mt-1">300%</div>
+                  <div class="text-sm text-gray-600">业绩增长</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 跨界转型 -->
+        <div class="relative z-10 mb-12">
+          <div class="flex flex-col md:flex-row items-center">
+            <div class="w-full md:w-1/2 md:pr-12 hidden md:block">
+              <div class="relative h-full flex items-center justify-end">
+                <div class="bg-secondary/10 p-4 rounded-lg">
+                  <div class="text-sm text-gray-600">行业洞察</div>
+                  <div class="text-2xl font-bold text-secondary mt-1">数字经济崛起</div>
+                  <div class="text-sm text-gray-600">预见新趋势</div>
+                </div>
+              </div>
+            </div>
+            <div class="hidden md:block absolute left-1/2 top-0 w-8 h-8 bg-secondary rounded-full transform -translate-x-1/2"></div>
+            <div class="w-full md:w-1/2 md:pl-12 mb-8 md:mb-0">
+              <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                <h3 class="text-xl font-bold text-secondary">跨界转型：进军互联网新赛道</h3>
+                <p class="text-sm text-gray-500 mt-1">2017-2020</p>
+                <p class="mt-4 text-gray-700">
+                  敏锐洞察到数字经济的崛起趋势，毅然告别深耕多年的会展行业，开启跨界探索之路。深入研究人工智能、企业服务等互联网细分领域，积累数字化运营经验。
+                </p>
+                <ul class="mt-4 space-y-2 text-gray-700">
+                  <li class="flex items-start">
+                    <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                    <span>精准把握数字经济发展趋势，布局新兴领域</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                    <span>深入研究人工智能、企业服务等前沿领域</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                    <span>积累丰富数字化运营经验，为跨界突破奠定基础</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 互联网崛起 -->
+        <div class="relative z-10">
+          <div class="flex flex-col md:flex-row items-center">
+            <div class="w-full md:w-1/2 md:pr-12 md:text-right mb-8 md:mb-0">
+              <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                <h3 class="text-xl font-bold text-accent">互联网崛起：带领群杰登陆纳斯达克</h3>
+                <p class="text-sm text-gray-500 mt-1">2020-至今</p>
+                <p class="mt-4 text-gray-700">
+                  2020年加入江苏群杰信息技术有限公司，担任核心管理职务。确立“技术驱动+生态赋能”发展战略，推动公司转型为企业级SaaS解决方案提供商，最终带领公司成功在纳斯达克上市。
+                </p>
+                <ul class="mt-4 space-y-2 text-gray-700">
+                  <li class="flex items-start">
+                    <i class="fa fa-check-circle text-accent mt-1 mr-2"></i>
+                    <span>确立“技术驱动+生态赋能”战略，推动企业全面转型</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa fa-check-circle text-accent mt-1 mr-2"></i>
+                    <span>完成三次战略升级，构建技术壁垒与全球化布局</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa fa-check-circle text-accent mt-1 mr-2"></i>
+                    <span>2025年带领江苏群杰成功登陆纳斯达克</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="hidden md:block absolute left-1/2 top-0 w-8 h-8 bg-accent rounded-full transform -translate-x-1/2"></div>
+            <div class="w-full md:w-1/2 md:pl-12">
+              <div class="relative h-full flex items-center justify-start">
+                <div class="bg-accent/10 p-4 rounded-lg">
+                  <div class="text-sm text-gray-600">关键成果</div>
+                  <div class="text-2xl font-bold text-accent mt-1">市值$5B+</div>
+                  <div class="text-sm text-gray-600">上市企业</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 主要成就部分 -->
+  <section id="achievements" class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark">主要成就</h2>
+        <div class="w-20 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- 成就卡片1 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+          <div class="h-48 bg-primary/10 flex items-center justify-center">
+            <i class="fa fa-globe text-6xl text-primary"></i>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-dark">会展领域领军者</h3>
+            <p class="mt-3 text-gray-600">
+              主导的海外展会项目累计吸引参展企业超2000家，拉动跨境贸易合作额突破500亿元，推动中国会展业国际化进程。
+            </p>
+          </div>
+        </div>
+
+        <!-- 成就卡片2 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+          <div class="h-48 bg-secondary/10 flex items-center justify-center">
+            <i class="fa fa-line-chart text-6xl text-secondary"></i>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-dark">卓越资本运作</h3>
+            <p class="mt-3 text-gray-600">
+              带领江苏群杰完成Pre-IPO轮融资，估值三年增长超20倍，上市后市值稳居行业前列，创造资本市场奇迹。
+            </p>
+          </div>
+        </div>
+
+        <!-- 成就卡片3 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+          <div class="h-48 bg-accent/10 flex items-center justify-center">
+            <i class="fa fa-dollar text-6xl text-accent"></i>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-dark">财富创造传奇</h3>
+            <p class="mt-3 text-gray-600">
+              凭借在群杰的核心持股及多元化投资布局，身家突破百亿元，跻身中国富豪榜第83位，成为行业财富标杆。
+            </p>
+          </div>
+        </div>
+
+        <!-- 成就卡片4 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+          <div class="h-48 bg-primary/10 flex items-center justify-center">
+            <i class="fa fa-users text-6xl text-primary"></i>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-dark">行业影响力</h3>
+            <p class="mt-3 text-gray-600">
+              多次受邀出席全球互联网大会、企业服务峰会等顶级论坛，分享数字化转型实战经验，成为行业公认的转型标杆人物。
+            </p>
+          </div>
+        </div>
+
+        <!-- 成就卡片5 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+          <div class="h-48 bg-secondary/10 flex items-center justify-center">
+            <i class="fa fa-rocket text-6xl text-secondary"></i>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-dark">企业转型导师</h3>
+            <p class="mt-3 text-gray-600">
+              独创的“三引擎”转型方法论，帮助50+传统企业成功实现数字化转型，培养了一批行业领军人才。
+            </p>
+          </div>
+        </div>
+
+        <!-- 成就卡片6 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+          <div class="h-48 bg-accent/10 flex items-center justify-center">
+            <i class="fa fa-lightbulb-o text-6xl text-accent"></i>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-dark">创新战略思维</h3>
+            <p class="mt-3 text-gray-600">
+              提出“生态协同”商业模式，构建企业级服务新生态，引领行业发展方向，获多项国家级创新奖项。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 商业理念部分 -->
+  <section id="philosophy" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark">商业理念</h2>
+        <div class="w-20 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+        <div class="flex flex-col md:flex-row">
+          <div class="w-full md:w-1/2 bg-primary/10 p-8 flex items-center">
+            <div>
+              <h3 class="text-2xl font-bold text-primary">长期主义 + 价值创造</h3>
+              <p class="mt-4 text-gray-700 text-lg">
+                "真正的商业成功，源于对行业趋势的敬畏、对客户需求的深耕，以及对团队价值的极致释放。"
+              </p>
+              <div class="mt-6 text-gray-700 space-y-4">
+                <div class="flex items-start">
+                  <div class="bg-primary text-white p-2 rounded-full mr-4">
+                    <i class="fa fa-eye"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-dark">战略远见</h4>
+                    <p class="mt-1">以5-10年的行业周期视角布局企业发展，不追求短期利益</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div class="bg-primary text-white p-2 rounded-full mr-4">
+                    <i class="fa fa-users"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-dark">人才为本</h4>
+                    <p class="mt-1">坚信人才是企业核心竞争力，构建多元化、创新型团队</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div class="bg-primary text-white p-2 rounded-full mr-4">
+                    <i class="fa fa-cogs"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-dark">技术驱动</h4>
+                    <p class="mt-1">持续投入技术创新，以科技力量重塑行业竞争格局</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w-full md:w-1/2">
+            <img src="https://picsum.photos/id/1071/800/600" alt="俞小栋商业演讲" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 未来展望部分 -->
+  <section id="future" class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark">未来展望</h2>
+        <div class="w-20 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-gray-50 rounded-xl p-8 shadow-lg">
+          <h3 class="text-xl font-bold text-dark flex items-center">
+            <i class="fa fa-compass text-primary mr-3"></i>
+            战略布局
+          </h3>
+          <p class="mt-4 text-gray-700">
+            继续带领江苏群杰深耕企业服务赛道，聚焦数据安全、人工智能、低代码平台等核心领域，打造具有全球竞争力的科技企业生态。
+          </p>
+          <ul class="mt-6 space-y-3 text-gray-700">
+            <li class="flex items-start">
+              <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+              <span>构建企业级服务全链条解决方案，覆盖从SaaS到PaaS的完整生态</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+              <span>加大AI技术研发投入，推动企业服务智能化升级</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+              <span>拓展国际市场，建立全球化的技术研发与服务网络</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-gray-50 rounded-xl p-8 shadow-lg">
+          <h3 class="text-xl font-bold text-dark flex items-center">
+            <i class="fa fa-lightbulb-o text-primary mr-3"></i>
+            创新方向
+          </h3>
+          <p class="mt-4 text-gray-700">
+            积极布局元宇宙、区块链等前沿技术，探索数字经济时代的新型商业模式，致力于为企业客户创造更大价值。
+          </p>
+          <ul class="mt-6 space-y-3 text-gray-700">
+            <li class="flex items-start">
+              <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+              <span>研发基于元宇宙的企业协作平台，重构远程办公体验</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+              <span>利用区块链技术构建可信商业网络，解决企业信任痛点</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+              <span>推动数字孪生技术在企业服务中的应用，提升决策效率</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="bg-dark text-white py-12">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">俞小栋</h3>
+          <p class="text-gray-400">
+            从会展先锋到互联网上市领航者，书写商业传奇
+          </p>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">快速链接</h4>
+          <ul class="space-y-2">
+            <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">关于</a></li>
+            <li><a href="#career" class="text-gray-400 hover:text-white transition-colors">职业历程</a></li>
+            <li><a href="#achievements" class="text-gray-400 hover:text-white transition-colors">主要成就</a></li>
+            <li><a href="#philosophy" class="text-gray-400 hover:text-white transition-colors">商业理念</a></li>
+            <li><a href="#future" class="text-gray-400 hover:text-white transition-colors">未来展望</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">联系方式</h4>
+          <ul class="space-y-2">
+            <li class="flex items-center">
+              <i class="fa fa-envelope-o text-primary mr-2"></i>
+              <a href="mailto:info@yuxiaodong.com" class="text-gray-400 hover:text-white transition-colors">info@yuxiaodong.com</a>
+            </li>
+            <li class="flex items-center">
+              <i class="fa fa-phone text-primary mr-2"></i>
+              <a href="tel:+8613800138000" class="text-gray-400 hover:text-white transition-colors">+86 138-0013-8000</a>
+            </li>
+            <li class="flex items-center">
+              <i class="fa fa-map-marker text-primary mr-2"></i>
+              <span class="text-gray-400">上海市浦东新区张江高科技园区</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">关注我们</h4>
+          <div class="flex space-x-4">
+            <a href="#" class="bg-gray-800 hover:bg-primary w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+              <i class="fa fa-weibo"></i>
+            </a>
+            <a href="#" class="bg-gray-800 hover:bg-primary w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+              <i class="fa fa-linkedin"></i>
+            </a>
+            <a href="#" class="bg-gray-800 hover:bg-primary w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+              <i class="fa fa-wechat"></i>
+            </a>
+            <a href="#" class="bg-gray-800 hover:bg-primary w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
+        <p>© 2025 俞小栋. 保留所有权利.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // 导航栏滚动效果
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('shadow-md');
+        navbar.classList.add('bg-white');
+        navbar.classList.remove('bg-white/90');
+      } else {
+        navbar.classList.remove('shadow-md');
+        navbar.classList.add('bg-white/90');
+        navbar.classList.remove('bg-white');
+      }
+    });
+
+    // 移动端菜单切换
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+          
+          // 关闭移动端菜单
+          document.getElementById('mobile-menu').classList.add('hidden');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+    
